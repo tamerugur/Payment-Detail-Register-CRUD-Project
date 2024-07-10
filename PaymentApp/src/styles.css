@@ -4,19 +4,23 @@
 }
 
 form label {
-    text-transform: uppercase;
-    color: grey;
-  }
-  
-  form input {
-    font-weight: 500;
-  }
-  
-  form input::placeholder {
-    color: #c0bdbd;
-    font-weight: 300;
-  }
-  
-  form.submitted input.ng-invalid{
-    border-color: red;
-  }
+  text-transform: uppercase;
+  color: grey;
+}
+
+form input {
+  font-weight: 500;
+}
+
+form input::placeholder {
+  color: #c0bdbd;
+  font-weight: 300;
+}
+
+form.submitted input.ng-invalid {
+  border-color: red;
+}
+
+form.submitted input.ng-invalid {
+  border-color: red;
+}

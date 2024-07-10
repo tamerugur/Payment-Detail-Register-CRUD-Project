@@ -1,4 +1,10 @@
-<form #form="ngForm" (submit)="onSubmit(form)">
+<form
+  #form="ngForm"
+  (submit)="onSubmit(form)"
+  [class.submitted]="service.formSubmitted"
+  novalidate
+  autocomplete="off"
+>
   <input
     type="hidden"
     name="paymentDetailId"
@@ -13,6 +19,8 @@
       #cardOwnerName="ngModel"
       name="cardOwnerName"
       [(ngModel)]="service.formData.cardOwnerName"
+      required
+      minlength="1"
     />
   </div>
   <div class="mb-3">
@@ -23,6 +31,9 @@
       #cardOwnerName="ngModel"
       name="cardNumber"
       [(ngModel)]="service.formData.cardNumber"
+      required
+      minlength="19"
+      maxlength="19"
     />
   </div>
   <div class="row">
@@ -35,6 +46,9 @@
         #cardOwnerName="ngModel"
         name="securityCode"
         [(ngModel)]="service.formData.securityCode"
+        required
+        minlength="3"
+        maxlength="3"
       />
     </div>
     <div class="mb-3 col-6">
@@ -45,6 +59,9 @@
         #cardOwnerName="ngModel"
         name="expirationDate"
         [(ngModel)]="service.formData.expirationDate"
+        required
+        minlength="5"
+        maxlength="5"
       />
     </div>
   </div>
