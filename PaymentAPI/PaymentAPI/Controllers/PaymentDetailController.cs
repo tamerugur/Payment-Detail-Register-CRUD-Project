@@ -22,8 +22,12 @@ namespace PaymentAPI.Controllers
 
         // GET: api/PaymentDetail
         [HttpGet]
-        public async Task<ActionResult<IEnumerable<PaymentDetail>>> GetPaymentDetails()
+        public async Task<ActionResult<IEnumerable<PaymentDetail >>> GetPaymentDetails()
         {
+            if (_context.PaymentDetails == null)
+            {
+                return NotFound();
+            }
             return await _context.PaymentDetails.ToListAsync();
         }
 
@@ -80,7 +84,7 @@ namespace PaymentAPI.Controllers
             _context.PaymentDetails.Add(paymentDetail);
             await _context.SaveChangesAsync();
 
-            return CreatedAtAction("GetPaymentDetail", new { id = paymentDetail.PaymentDetailId }, paymentDetail);
+            return Ok(await _context.PaymentDetails.ToListAsync());
         }
 
         // DELETE: api/PaymentDetail/5
