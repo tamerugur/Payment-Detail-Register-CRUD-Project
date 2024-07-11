@@ -26,6 +26,18 @@ export class PaymentDetailService {
   postPaymentDetail(): Observable<any> {
     return this.http.post(this.url, this.formData);
   }
+
+  putPaymentDetail(): Observable<any> {
+    return this.http.put(
+      this.url + '/' + this.formData.paymentDetailId,
+      this.formData
+    );
+  }
+
+  deletePaymentDetail(id: number): Observable<any> {
+    return this.http.delete(this.url + '/' + id);
+  }
+
   resetForm(form: NgForm) {
     form.resetForm();
     this.formData = new PaymentDetail();

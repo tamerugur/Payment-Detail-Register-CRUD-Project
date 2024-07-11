@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\User\\source\\repos\\paymentAPI\\PaymentAPI\\PaymentAPI.csproj": {}
+    "C:\\Users\\User\\source\\repos\\PaymentAPI\\PaymentAPI\\PaymentAPI.csproj": {}
   },
   "projects": {
-    "C:\\Users\\User\\source\\repos\\paymentAPI\\PaymentAPI\\PaymentAPI.csproj": {
+    "C:\\Users\\User\\source\\repos\\PaymentAPI\\PaymentAPI\\PaymentAPI.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\User\\source\\repos\\paymentAPI\\PaymentAPI\\PaymentAPI.csproj",
+        "projectUniqueName": "C:\\Users\\User\\source\\repos\\PaymentAPI\\PaymentAPI\\PaymentAPI.csproj",
         "projectName": "PaymentAPI",
-        "projectPath": "C:\\Users\\User\\source\\repos\\paymentAPI\\PaymentAPI\\PaymentAPI.csproj",
+        "projectPath": "C:\\Users\\User\\source\\repos\\PaymentAPI\\PaymentAPI\\PaymentAPI.csproj",
         "packagesPath": "C:\\Users\\User\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\User\\source\\repos\\paymentAPI\\PaymentAPI\\obj\\",
+        "outputPath": "C:\\Users\\User\\source\\repos\\PaymentAPI\\PaymentAPI\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files (x86)\\Microsoft Visual Studio\\Shared\\NuGetPackages"
@@ -39,6 +39,11 @@
           "warnAsError": [
             "NU1605"
           ]
+        },
+        "restoreAuditProperties": {
+          "enableAudit": "true",
+          "auditLevel": "low",
+          "auditMode": "direct"
         }
       },
       "frameworks": {

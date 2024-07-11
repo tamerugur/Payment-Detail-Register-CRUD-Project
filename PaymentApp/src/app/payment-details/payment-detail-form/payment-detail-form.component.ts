@@ -17,19 +17,43 @@ export class PaymentDetailFormComponent {
   onSubmit(form: NgForm) {
     this.service.formSubmitted = true;
     if (form.valid) {
-      this.service.postPaymentDetail().subscribe({
-        next: (res: any) => {
-          this.service.list = res as PaymentDetail[];
-          this.service.resetForm(form);
-          this.toastr.success(
-            'You have successfully added a new credit card.',
-            'Credit Card Registered!'
-          );
-        },
-        error: (err: any) => {
-          console.log(err);
-        },
-      });
+      if (this.service.formData.paymentDetailId == 0) {
+        this.insertRecord(form);
+      } else {
+        this.updateRecord(form);
+      }
     }
+  }
+
+  insertRecord(form: NgForm) {
+    this.service.postPaymentDetail().subscribe({
+      next: (res: any) => {
+        this.service.list = res as PaymentDetail[];
+        this.service.resetForm(form);
+        this.toastr.success(
+          'You have successfully added a new credit card.',
+          'Credit Card Registered!'
+        );
+      },
+      error: (err: any) => {
+        console.log(err);
+      },
+    });
+  }
+  updateRecord(form: NgForm) {
+    this.service.putPaymentDetail().subscribe({
+      next: (res: any) => {
+        this.service.list = res as PaymentDetail[];
+        this.service.refreshList();
+        this.service.resetForm(form);
+        this.toastr.info(
+          'Your changes have been saved!',
+          'Updated the credit card.'
+        );
+      },
+      error: (err: any) => {
+        console.log(err);
+      },
+    });
   }
 }
